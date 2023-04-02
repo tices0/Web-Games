@@ -1,0 +1,33 @@
+// neutral
+$lighter-grey: #f1f1f1;
+$light-grey: #e3e3e3;
+$grey: #adadad;
+$dark-grey: #808080;
+$darker-grey: #575757;
+$darkest-grey: #282828;
+
+// light
+$light-blue: #46a3ff;
+$light-green: #00c096;
+$light-red: #ff827e;
+$yellow: #ffb048;
+
+// dark
+$blue: #225577;
+$dark-green: #00a682;
+$dark-red: #e45651;
+$dark-blue: #212835;
+$darker-blue: #12161f;
+
+button {
+	all: unset;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}

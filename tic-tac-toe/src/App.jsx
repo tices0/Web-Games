@@ -7,7 +7,7 @@ function App() {
 	return (
 		<main className="grid">
 			{list.map(item => (
-				<div>{item}</div>
+				<button className="box">{item}</button>
 			))}
 		</main>
 	);
