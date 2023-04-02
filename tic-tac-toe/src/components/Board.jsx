@@ -1,26 +1,33 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 
 const list = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 function Board() {
-	// const [xMarked, setXMarked] = useState({});
-	const [lastClick, setLastClick] = useState();
+	const [xMarkedBoxes, setXMarkedBoxes] = useState({});
 	const xMarkedRef = useRef({});
 
-	useEffect(() => {
-		console.log(lastClick);
-	}, [lastClick]);
+	const handleClick = index => {
+		xMarkedRef.current[index].classList.add("x-marked");
+		setXMarkedBoxes(old => ({ ...old, [index]: true }));
+	};
 
 	return (
 		<main className="grid">
 			{list.map((item, index) => (
 				<button
+					key={index}
 					className="box"
 					ref={el => (xMarkedRef.current[index] = el)}
-					onClick={event => setLastClick(event.target)}
+					onClick={() => handleClick(index)}
 				>
-					{/* <div className="background red"></div> */}
-					{/* <i className="fa-sharp fa-solid fa-xmark"></i> */}
+					{xMarkedBoxes[index] ? (
+						<>
+							<div className="background blue"></div>
+							<i className="fa-sharp fa-solid fa-xmark"></i>
+						</>
+					) : (
+						""
+					)}
 					{/* <i className="fa-solid fa-o"></i> */}
 				</button>
 			))}
