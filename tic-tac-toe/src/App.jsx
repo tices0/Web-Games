@@ -1,16 +1,9 @@
 import React from "react";
 import "./styles/style.css";
-
-const list = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+import Board from "./components/Board";
 
 function App() {
-	return (
-		<main className="grid">
-			{list.map(item => (
-				<button className="box">{item}</button>
-			))}
-		</main>
-	);
+	return <Board />;
 }
 
 export default App;

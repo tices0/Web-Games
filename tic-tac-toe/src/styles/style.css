@@ -9,4 +9,55 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.grid .box {
+  background-color: #f1f1f1;
+  border-radius: 0;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+.grid .box.x-marked {
+  border: 2px solid #46a3ff;
+}
+.grid .box.o-marked {
+  border: 2px solid #ff827e;
+}
+.grid .box .background {
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.grid .box .background.blue {
+  background-color: #46a3ff;
+}
+.grid .box .background.red {
+  background-color: #ff827e;
+}
+.grid .box i {
+  font-size: 40px;
+}
+.grid .box i.fa-xmark {
+  color: #46a3ff;
+}
+.grid .box i.fa-o {
+  color: #ff827e;
 }/*# sourceMappingURL=style.css.map */
