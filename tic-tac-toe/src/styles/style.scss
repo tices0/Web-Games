@@ -150,3 +150,28 @@ section.game-directions {
 		}
 	}
 }
+
+.play-again {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translate(-50%);
+	width: calc((3 * (110px + 4px)) + 2rem - 1.5px);
+	border: 1.5px solid $lighter-grey;
+	border-radius: 2px;
+	padding: 0.75rem 0;
+	color: #000;
+	cursor: pointer;
+	@include flexCenter(row);
+	font-size: 15px;
+
+	i {
+		font-size: 20px;
+		margin-right: 0.5rem;
+	}
+
+	&:hover {
+		background-color: $lighter-grey;
+		// border-color: $ligher-grey;
+	}
+}

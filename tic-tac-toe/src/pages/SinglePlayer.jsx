@@ -116,7 +116,16 @@ function SinglePlayer() {
 				boxesRef={boxesRef}
 				oMarkedBoxes={oMarkedBoxes}
 			/>
-			{gameOver ? <PlayAgainButton /> : ""}
+			{gameOver ? (
+				<PlayAgainButton
+					setBoxesClicked={setBoxesClicked}
+					setXMarkedBoxes={setXMarkedBoxes}
+					setOMarkedBoxes={setOMarkedBoxes}
+					setGameOver={setGameOver}
+				/>
+			) : (
+				""
+			)}
 		</>
 	);
 }

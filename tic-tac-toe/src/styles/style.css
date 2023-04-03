@@ -99,4 +99,29 @@ section.game-directions .message.draw-message h1 {
 section.game-directions .message p {
   color: #adadad;
   font-size: 18px;
+}
+
+.play-again {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(342px + 2rem - 1.5px);
+  border: 1.5px solid #f1f1f1;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 15px;
+}
+.play-again i {
+  font-size: 20px;
+  margin-right: 0.5rem;
+}
+.play-again:hover {
+  background-color: #f1f1f1;
 }/*# sourceMappingURL=style.css.map */
