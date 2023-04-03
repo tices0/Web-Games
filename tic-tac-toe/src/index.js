@@ -14,15 +14,11 @@ const possibleCombinations = [
 ];
 
 export const checkForVictory = boxes => {
-	console.log("boxes:", boxes);
 	for (let combition in possibleCombinations) {
 		let count = 0;
 		for (let box in boxes) {
-			if (combition.includes(box)) {
+			if (possibleCombinations[combition].includes(parseInt(box)))
 				count++;
-				console.log("count:", count);
-			}
-			// console.log("box:", box);
 		}
 		if (count > 2) return true;
 	}

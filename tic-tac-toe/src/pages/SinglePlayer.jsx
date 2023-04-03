@@ -17,7 +17,6 @@ function SinglePlayer() {
 			setXMarkedBoxes(old => ({ ...old, [index]: true }));
 			setBoxesClicked(old => [...old, index]);
 			setPlayerTurn(false);
-			console.log(checkForVictory(xMarkedBoxes));
 		}
 	};
 
@@ -37,6 +36,7 @@ function SinglePlayer() {
 			}, 2000);
 
 		if (playerTurn) {
+			console.log(checkForVictory(xMarkedBoxes));
 			for (const box in boxesRef.current) {
 				if (!boxesClicked.includes(box)) {
 					boxesRef.current[box].classList.add("player-turn");
