@@ -41,6 +41,7 @@ body {
 }
 .grid .box.computer-turn, .grid .box.player-2 {
   background-color: #f1f1f1;
+  border: 2px solid #e3e3e3;
 }
 .grid .box .background {
   opacity: 0.2;
@@ -70,4 +71,13 @@ body {
 }
 .grid .box i.fa-o {
   color: #ff827e;
+}
+
+.turn {
+  font-weight: 500;
+  font-size: 24px;
+  position: absolute;
+  top: calc(50% - 225px);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */
