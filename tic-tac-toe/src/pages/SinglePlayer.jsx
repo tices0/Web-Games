@@ -122,6 +122,7 @@ function SinglePlayer() {
 					setXMarkedBoxes={setXMarkedBoxes}
 					setOMarkedBoxes={setOMarkedBoxes}
 					setGameOver={setGameOver}
+					boxesRef={boxesRef}
 				/>
 			) : (
 				""
