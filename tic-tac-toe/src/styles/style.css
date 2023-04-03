@@ -78,19 +78,25 @@ section.game-directions {
   top: calc(50% - 225px);
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
 }
 section.game-directions h1 {
   font-weight: 500;
   font-size: 24px;
 }
 section.game-directions .message h1 {
-  color: #46a3ff;
   text-transform: capitalize;
+}
+section.game-directions .message.win-message h1 {
+  color: #46a3ff;
+}
+section.game-directions .message.lose-message h1 {
+  color: #ff827e;
+}
+section.game-directions .message.draw-message h1 {
+  color: #000;
 }
 section.game-directions .message p {
   color: #adadad;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */

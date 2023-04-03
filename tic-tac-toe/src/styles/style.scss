@@ -120,7 +120,7 @@ section.game-directions {
 	top: calc(50% - 225px);
 	left: 50%;
 	transform: translate(-50%, -50%);
-	@include flexCenter(column);
+	text-align: center;
 
 	h1 {
 		font-weight: 500;
@@ -129,12 +129,24 @@ section.game-directions {
 
 	.message {
 		h1 {
-			color: $light-blue;
 			text-transform: capitalize;
+		}
+
+		&.win-message h1 {
+			color: $light-blue;
+		}
+
+		&.lose-message h1 {
+			color: $light-red;
+		}
+
+		&.draw-message h1 {
+			color: #000;
 		}
 
 		p {
 			color: $grey;
+			font-size: 18px;
 		}
 	}
 }

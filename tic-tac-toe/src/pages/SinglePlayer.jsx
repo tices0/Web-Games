@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Board from "../components/Board";
 import { checkForVictory } from "..";
+import PlayAgainButton from "../components/PlayAgain";
 // import GameDirections from "../components/GameDirections";
 
 function SinglePlayer() {
@@ -72,6 +73,7 @@ function SinglePlayer() {
 
 	useEffect(() => {
 		if (gameOver.gameOver) {
+			setPlayerTurn(true);
 			for (const box in boxesRef.current) {
 				if (!boxesClicked.includes(parseInt(box))) {
 					boxesRef.current[box].classList.remove("player-turn");
@@ -114,6 +116,7 @@ function SinglePlayer() {
 				boxesRef={boxesRef}
 				oMarkedBoxes={oMarkedBoxes}
 			/>
+			{gameOver ? <PlayAgainButton /> : ""}
 		</>
 	);
 }
