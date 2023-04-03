@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles/style.css";
-import Board from "./components/Board";
+import SinglePlayer from "./pages/SinglePlayer";
 
 function App() {
-	return <Board />;
+	return <SinglePlayer />;
 }
 
 export default App;

@@ -26,6 +26,7 @@
 ## Acknowledgements
 
 -   [Google Fonts](https://fonts.google.com/specimen/Roboto)
+-   [Figma Design](<https://www.figma.com/file/oYIFNgo4LazHQPhLvf8Vd6/TIC-TAC-TOE---UI-Kit-(Community)?node-id=0-1&t=RQkuuTcCvoCvCAZD-0>)
 
 ## Contact
 

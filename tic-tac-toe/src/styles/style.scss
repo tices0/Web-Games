@@ -45,7 +45,6 @@ body {
 	transform: translate(-50%, -50%);
 
 	.box {
-		background-color: $lighter-grey;
 		border-radius: 0;
 		width: 110px;
 		height: 110px;
@@ -53,12 +52,20 @@ body {
 		text-align: center;
 		position: relative;
 
-		&.x-marked {
-			border: 2px solid $light-blue;
+		&.player-turn,
+		&.player-1 {
+			background-color: #fff;
+			border: 2px solid $light-grey;
+
+			&:hover {
+				background-color: $light-blue;
+				opacity: 0.2;
+			}
 		}
 
-		&.o-marked {
-			border: 2px solid $light-red;
+		&.computer-turn,
+		&.player-2 {
+			background-color: $lighter-grey;
 		}
 
 		.background {
@@ -76,6 +83,14 @@ body {
 			&.red {
 				background-color: $light-red;
 			}
+		}
+
+		&.x-marked {
+			border: 2px solid $light-blue;
+		}
+
+		&.o-marked {
+			border: 2px solid $light-red;
 		}
 
 		i {

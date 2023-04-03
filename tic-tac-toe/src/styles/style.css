@@ -24,7 +24,6 @@ body {
   transform: translate(-50%, -50%);
 }
 .grid .box {
-  background-color: #f1f1f1;
   border-radius: 0;
   width: 110px;
   height: 110px;
@@ -32,11 +31,16 @@ body {
   text-align: center;
   position: relative;
 }
-.grid .box.x-marked {
-  border: 2px solid #46a3ff;
+.grid .box.player-turn, .grid .box.player-1 {
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
 }
-.grid .box.o-marked {
-  border: 2px solid #ff827e;
+.grid .box.player-turn:hover, .grid .box.player-1:hover {
+  background-color: #46a3ff;
+  opacity: 0.2;
+}
+.grid .box.computer-turn, .grid .box.player-2 {
+  background-color: #f1f1f1;
 }
 .grid .box .background {
   opacity: 0.2;
@@ -51,6 +55,12 @@ body {
 }
 .grid .box .background.red {
   background-color: #ff827e;
+}
+.grid .box.x-marked {
+  border: 2px solid #46a3ff;
+}
+.grid .box.o-marked {
+  border: 2px solid #ff827e;
 }
 .grid .box i {
   font-size: 40px;
