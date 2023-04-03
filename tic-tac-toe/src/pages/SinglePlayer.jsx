@@ -9,7 +9,10 @@ function SinglePlayer() {
 	const [oMarkedBoxes, setOMarkedBoxes] = useState({});
 	const boxesRef = useRef({});
 	const [playerTurn, setPlayerTurn] = useState(true);
-	const [gameOver, setGameOver] = useState(false);
+	const [gameOver, setGameOver] = useState({
+		gameOver: false,
+		stateOfGame: "",
+	});
 
 	const handleClick = index => {
 		if (playerTurn) {
@@ -55,7 +58,11 @@ function SinglePlayer() {
 			}
 		} else {
 			console.log("game over");
-			setGameOver(true);
+			let stateOfGame;
+			if (checkForVictory(xMarkedBoxes)) stateOfGame = "win";
+			else if (checkForVictory(oMarkedBoxes)) stateOfGame = "lose";
+			else stateOfGame = "draw";
+			setGameOver({ gameOver: true, stateOfGame: stateOfGame });
 			for (const box in boxesRef.current) {
 				boxesRef.current[box].style.pointerEvents = "none";
 			}
@@ -64,9 +71,9 @@ function SinglePlayer() {
 	}, [playerTurn]);
 
 	useEffect(() => {
-		if (gameOver) {
+		if (gameOver.gameOver) {
 			for (const box in boxesRef.current) {
-				if (!boxesClicked.includes(box)) {
+				if (!boxesClicked.includes(parseInt(box))) {
 					boxesRef.current[box].classList.remove("player-turn");
 					boxesRef.current[box].classList.add("computer-turn");
 				}
@@ -77,13 +84,30 @@ function SinglePlayer() {
 
 	return (
 		<>
-			{gameOver ? (
-				"wassup"
-			) : playerTurn ? (
-				<h1 className="turn">Your Turn</h1>
-			) : (
-				<h1 className="turn">Please Wait</h1>
-			)}
+			<section className="game-directions">
+				{gameOver.gameOver ? (
+					gameOver.stateOfGame === "win" ? (
+						<div className="win-message message">
+							<h1>You won!</h1>
+							<p>Congratulations</p>
+						</div>
+					) : gameOver.stateOfGame === "lose" ? (
+						<div className="lose-message message">
+							<h1>You lost!</h1>
+							<p>Good luck next time</p>
+						</div>
+					) : (
+						<div className="draw-message message">
+							<h1>Draw!</h1>
+							<p>It's a draw</p>
+						</div>
+					)
+				) : playerTurn ? (
+					<h1 className="turn">Your Turn</h1>
+				) : (
+					<h1 className="turn">Please Wait</h1>
+				)}
+			</section>
 			<Board
 				handleClick={handleClick}
 				xMarkedBoxes={xMarkedBoxes}

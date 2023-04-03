@@ -73,11 +73,24 @@ body {
   color: #ff827e;
 }
 
-.turn {
-  font-weight: 500;
-  font-size: 24px;
+section.game-directions {
   position: absolute;
   top: calc(50% - 225px);
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section.game-directions h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+section.game-directions .message h1 {
+  color: #46a3ff;
+  text-transform: capitalize;
+}
+section.game-directions .message p {
+  color: #adadad;
 }/*# sourceMappingURL=style.css.map */
