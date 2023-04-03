@@ -41,7 +41,7 @@ body {
 }
 .grid .box.computer-turn, .grid .box.player-2 {
   background-color: #f1f1f1;
-  border: 2px solid #e3e3e3;
+  border: 2px solid #f1f1f1;
 }
 .grid .box .background {
   opacity: 0.2;

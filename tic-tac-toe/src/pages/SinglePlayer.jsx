@@ -17,15 +17,12 @@ function SinglePlayer() {
 			boxesRef.current[index].style.pointerEvents = "none";
 			setXMarkedBoxes(old => ({ ...old, [index]: true }));
 			setBoxesClicked(old => [...old, index]);
-			if (checkForVictory(xMarkedBoxes)) {
-				console.log("game over");
-				setGameOver(true);
-			} else setPlayerTurn(false);
+			setPlayerTurn(false);
 		}
 	};
 
 	useEffect(() => {
-		if (!gameOver) {
+		if (!checkForVictory(xMarkedBoxes) && !checkForVictory(oMarkedBoxes)) {
 			// computer turn
 			if (!playerTurn)
 				setTimeout(() => {
@@ -42,7 +39,6 @@ function SinglePlayer() {
 				}, 2000);
 
 			if (playerTurn) {
-				if (checkForVictory(xMarkedBoxes)) setGameOver(true);
 				for (const box in boxesRef.current) {
 					if (!boxesClicked.includes(box)) {
 						boxesRef.current[box].classList.add("player-turn");
@@ -50,7 +46,6 @@ function SinglePlayer() {
 					}
 				}
 			} else {
-				if (checkForVictory(oMarkedBoxes)) setGameOver(true);
 				for (const box in boxesRef.current) {
 					if (!boxesClicked.includes(box)) {
 						boxesRef.current[box].classList.remove("player-turn");
@@ -60,16 +55,31 @@ function SinglePlayer() {
 			}
 		} else {
 			console.log("game over");
+			setGameOver(true);
 			for (const box in boxesRef.current) {
 				boxesRef.current[box].style.pointerEvents = "none";
 			}
 		}
 		// eslint-disable-next-line
-	}, [playerTurn, gameOver]);
+	}, [playerTurn]);
+
+	useEffect(() => {
+		if (gameOver) {
+			for (const box in boxesRef.current) {
+				if (!boxesClicked.includes(box)) {
+					boxesRef.current[box].classList.remove("player-turn");
+					boxesRef.current[box].classList.add("computer-turn");
+				}
+			}
+		}
+		// eslint-disable-next-line
+	}, [gameOver]);
 
 	return (
 		<>
-			{playerTurn ? (
+			{gameOver ? (
+				"wassup"
+			) : playerTurn ? (
 				<h1 className="turn">Your Turn</h1>
 			) : (
 				<h1 className="turn">Please Wait</h1>
