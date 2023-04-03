@@ -7,6 +7,7 @@ function PlayAgainButton(props) {
 		setOMarkedBoxes,
 		setGameOver,
 		boxesRef,
+		isSinglePlayer,
 	} = props;
 
 	const resetGame = () => {
@@ -15,9 +16,11 @@ function PlayAgainButton(props) {
 		setOMarkedBoxes({});
 		setGameOver({ gameOver: false, stateOfGame: "" });
 		for (let box in boxesRef.current) {
-			// boxesRef.current[box].className = "box";
-			boxesRef.current[box].classList.remove("x-marked");
-			boxesRef.current[box].classList.remove("o-marked");
+			// boxesRef.current[box].classList.remove("x-marked");
+			// boxesRef.current[box].classList.remove("o-marked");
+			boxesRef.current[box].className = `box ${
+				isSinglePlayer ? "player-turn" : "player-1"
+			}`;
 			boxesRef.current[box].style.pointerEvents = "auto";
 		}
 	};

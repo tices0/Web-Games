@@ -37,6 +37,7 @@ body {
 }
 .grid .box.player-turn:hover, .grid .box.player-1:hover {
   background-color: #46a3ff;
+  border-color: #46a3ff;
   opacity: 0.2;
 }
 .grid .box.computer-turn, .grid .box.player-2 {
