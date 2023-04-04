@@ -130,6 +130,20 @@ section.game-directions .message p {
   background-color: #f1f1f1;
 }
 
+button.back-to-menu {
+  border: 1.5px solid #f1f1f1;
+  border-radius: 2px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+button.back-to-menu:hover {
+  background-color: #f1f1f1;
+}
+button.back-to-menu i {
+  font-size: 20px;
+}
+
 main.menu {
   position: relative;
   width: 100vw;

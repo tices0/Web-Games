@@ -178,6 +178,22 @@ section.game-directions {
 	}
 }
 
+button.back-to-menu {
+	border: 1.5px solid $lighter-grey;
+	border-radius: 2px;
+	padding: 0.5rem 0.75rem;
+	cursor: pointer;
+	margin: 1rem;
+
+	&:hover {
+		background-color: $lighter-grey;
+	}
+
+	i {
+		font-size: 20px;
+	}
+}
+
 main.menu {
 	position: relative;
 	width: 100vw;

@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import Board from "../components/Board";
 import { checkForVictory } from "..";
 import PlayAgainButton from "../components/PlayAgain";
+import BackToMenuButton from "../components/BackToMenuButton";
 // import GameDirections from "../components/GameDirections";
 
-function SinglePlayer() {
+function SinglePlayer({ setOnMenuPage }) {
 	const [boxesClicked, setBoxesClicked] = useState([]);
 	const [xMarkedBoxes, setXMarkedBoxes] = useState({});
 	const [oMarkedBoxes, setOMarkedBoxes] = useState({});
@@ -91,9 +92,7 @@ function SinglePlayer() {
 	return (
 		<>
 			{gameOver.gameOver ? (
-				<button className="back-to-menu">
-					<i className="fa-solid fa-chevron-left"></i>
-				</button>
+				<BackToMenuButton setOnMenuPage={setOnMenuPage} />
 			) : (
 				""
 			)}
