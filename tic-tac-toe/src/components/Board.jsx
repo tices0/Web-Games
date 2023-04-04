@@ -9,7 +9,7 @@ function Board(props) {
 			{list.map((item, index) => (
 				<button
 					key={index}
-					className="box"
+					className="box player-turn"
 					ref={el => (boxesRef.current[index] = el)}
 					onClick={() => handleClick(index)}
 				>
@@ -24,7 +24,7 @@ function Board(props) {
 					{oMarkedBoxes[index] ? (
 						<>
 							<div className="background red"></div>
-                            <i className="fa-solid fa-o"></i>
+							<i className="fa-solid fa-o"></i>
 						</>
 					) : (
 						""

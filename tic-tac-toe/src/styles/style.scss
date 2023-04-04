@@ -59,8 +59,8 @@ body {
 		text-align: center;
 		position: relative;
 
-		&.player-turn,
-		&.player-1 {
+		&.player-turn
+		{
 			background-color: #fff;
 			border: 2px solid $light-grey;
 
@@ -71,8 +71,8 @@ body {
 			}
 		}
 
-		&.computer-turn,
-		&.player-2 {
+		&.computer-turn
+		{
 			background-color: $lighter-grey;
 			border: 2px solid $lighter-grey;
 		}
