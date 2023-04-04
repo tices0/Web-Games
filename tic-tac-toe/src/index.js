@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
+localStorage.playerBefore = false
+
 const possibleCombinations = [
 	[0, 1, 2],
 	[3, 4, 5],

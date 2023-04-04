@@ -5,6 +5,7 @@ import MenuPage from "./pages/Menu";
 
 function App() {
 	const [onMenuPage, setOnMenuPage] = useState(true);
+	const [singlePlayerMode, setSinglePlayerMode] = useState(true);
 	if (onMenuPage) return <MenuPage setOnMenuPage={setOnMenuPage} />;
 	return <SinglePlayer setOnMenuPage={setOnMenuPage} />;
 }

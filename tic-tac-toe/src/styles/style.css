@@ -144,19 +144,52 @@ button.back-to-menu i {
   font-size: 20px;
 }
 
-main.menu {
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    top: 20px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+section.menu {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
-main.menu img {
+section.menu main {
   position: absolute;
   top: calc(50% - 50px);
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-main.menu button {
+section.menu main * {
+  position: relative;
+  animation-name: fadeInMenu;
+}
+section.menu main img {
+  width: 100px;
+  margin-bottom: 1.5rem;
+  animation-duration: 2s;
+}
+section.menu main h1 {
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+  animation-duration: 3s;
+}
+section.menu main p {
+  color: #adadad;
+  font-size: 16px;
+  animation-duration: 4s;
+}
+section.menu button {
   border: 1.5px solid #f1f1f1;
   border-radius: 2px;
   padding: 0.75rem 0;
@@ -166,7 +199,7 @@ main.menu button {
   text-align: center;
   font-weight: 500;
 }
-main.menu .btn-container {
+section.menu .btn-container {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -177,28 +210,34 @@ main.menu .btn-container {
   flex-direction: column;
   gap: 0.75rem;
 }
-main.menu .mode-btns {
+section.menu .mode-btns {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 1rem;
   min-width: 500px;
+  position: relative;
+  animation-name: fadeInMenu;
+  animation-duration: 4s;
 }
-main.menu .mode-btns button {
+section.menu .mode-btns button {
   width: 100%;
 }
-main.menu .mode-btns button:hover {
+section.menu .mode-btns button:hover {
   background-color: #f1f1f1;
 }
-main.menu .mode-btns button.active {
+section.menu .mode-btns button.active {
   background-color: #46a3ff;
   border-color: #46a3ff;
 }
-main.menu .start {
+section.menu .start {
   min-width: 500px;
+  position: relative;
+  animation-name: fadeInMenu;
+  animation-duration: 5s;
 }
-main.menu .start:hover {
+section.menu .start:hover {
   background-color: #ff827e;
   border-color: #ff827e;
 }

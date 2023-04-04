@@ -7,17 +7,23 @@ function MenuPage({ setOnMenuPage, setSinglePlayerMode }) {
 	const changeActiveToSinglePlayer = () => {
 		singlePlayerModeRef.current.classList.add("active");
 		multiPlayerModeRef.current.classList.remove("active");
+		setSinglePlayerMode(true);
 	};
 
 	const changeActiveToMultiPlayer = () => {
 		singlePlayerModeRef.current.classList.remove("active");
 		multiPlayerModeRef.current.classList.add("active");
+		setSinglePlayerMode(false);
 	};
 
 	return (
-		<main className="menu">
+		<section className="menu">
 			{/* <button className="stats">Stats</button> */}
-			<img src={require("../media/light-mode-logo.png")} alt="" />
+			<main className="middle">
+				<img src={require("../media/light-mode-logo.png")} alt="" />
+				<h1>Welcome {localStorage.playedBefore ? "back" : ""} </h1>
+				<p>Select a player mode and press Start to play</p>
+			</main>
 			<div className="btn-container">
 				<div className="mode-btns">
 					<button
@@ -39,7 +45,7 @@ function MenuPage({ setOnMenuPage, setSinglePlayerMode }) {
 					Start
 				</button>
 			</div>
-		</main>
+		</section>
 	);
 }
 
