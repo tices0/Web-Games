@@ -175,6 +175,67 @@ section.game-directions {
 
 	&:hover {
 		background-color: $lighter-grey;
-		// border-color: $ligher-grey;
+	}
+}
+
+main.menu {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 125px;
+	}
+
+	button {
+		border: 1.5px solid $lighter-grey;
+		border-radius: 2px;
+		padding: 0.75rem 0;
+		color: #000;
+		cursor: pointer;
+		font-size: 15px;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	.btn-container {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translate(-50%);
+		@include flexCenter(column);
+		gap: 0.5rem;
+	}
+
+	.mode-btns {
+		@include flexCenter(row);
+		gap: 1rem;
+		width: calc((3 * (110px + 4px)) + 2rem - 1.5px);
+
+		button {
+			width: 100%;
+
+			&:hover {
+				background-color: $lighter-grey;
+			}
+
+			&.active {
+				background-color: $light-blue;
+				border-color: $light-blue;
+			}
+		}
+	}
+
+	.start {
+		width: calc((3 * (110px + 4px)) + 2rem - 1.5px);
+
+		&:hover {
+			background-color: $light-red;
+			border-color: $light-red;
+		}
 	}
 }

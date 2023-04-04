@@ -128,4 +128,63 @@ section.game-directions .message p {
 }
 .play-again:hover {
   background-color: #f1f1f1;
+}
+
+main.menu {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+main.menu img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125px;
+}
+main.menu button {
+  border: 1.5px solid #f1f1f1;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  color: #000;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+main.menu .btn-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main.menu .mode-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: calc(342px + 2rem - 1.5px);
+}
+main.menu .mode-btns button {
+  width: 100%;
+}
+main.menu .mode-btns button:hover {
+  background-color: #f1f1f1;
+}
+main.menu .mode-btns button.active {
+  background-color: #46a3ff;
+  border-color: #46a3ff;
+}
+main.menu .start {
+  width: calc(342px + 2rem - 1.5px);
+}
+main.menu .start:hover {
+  background-color: #ff827e;
+  border-color: #ff827e;
 }/*# sourceMappingURL=style.css.map */

@@ -26,7 +26,11 @@ function SinglePlayer() {
 	};
 
 	useEffect(() => {
-		if (!checkForVictory(xMarkedBoxes) && !checkForVictory(oMarkedBoxes) && boxesClicked.length < 9) {
+		if (
+			!checkForVictory(xMarkedBoxes) &&
+			!checkForVictory(oMarkedBoxes) &&
+			boxesClicked.length < 9
+		) {
 			// computer turn
 			if (!playerTurn)
 				setTimeout(() => {
@@ -86,6 +90,13 @@ function SinglePlayer() {
 
 	return (
 		<>
+			{gameOver.gameOver ? (
+				<button className="back-to-menu">
+					<i className="fa-solid fa-chevron-left"></i>
+				</button>
+			) : (
+				""
+			)}
 			<section className="game-directions">
 				{gameOver.gameOver ? (
 					gameOver.stateOfGame === "win" ? (
