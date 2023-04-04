@@ -125,10 +125,12 @@ section.game-directions {
 
 	h1 {
 		font-weight: 500;
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	.message {
+		margin-bottom: 1rem;
+
 		h1 {
 			text-transform: capitalize;
 		}
@@ -147,7 +149,7 @@ section.game-directions {
 
 		p {
 			color: $grey;
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
 }

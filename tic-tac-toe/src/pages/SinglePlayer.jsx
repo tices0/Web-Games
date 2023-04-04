@@ -26,7 +26,7 @@ function SinglePlayer() {
 	};
 
 	useEffect(() => {
-		if (!checkForVictory(xMarkedBoxes) && !checkForVictory(oMarkedBoxes)) {
+		if (!checkForVictory(xMarkedBoxes) && !checkForVictory(oMarkedBoxes) && boxesClicked.length < 9) {
 			// computer turn
 			if (!playerTurn)
 				setTimeout(() => {

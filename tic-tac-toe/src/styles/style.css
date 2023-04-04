@@ -83,7 +83,10 @@ section.game-directions {
 }
 section.game-directions h1 {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
+}
+section.game-directions .message {
+  margin-bottom: 1rem;
 }
 section.game-directions .message h1 {
   text-transform: capitalize;
@@ -99,7 +102,7 @@ section.game-directions .message.draw-message h1 {
 }
 section.game-directions .message p {
   color: #adadad;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .play-again {
