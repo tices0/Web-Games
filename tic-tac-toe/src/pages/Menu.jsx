@@ -1,19 +1,19 @@
 import React, { useRef } from "react";
 
-function MenuPage({ setOnMenuPage, setSinglePlayerMode }) {
+function MenuPage({ setOnMenuPage, setIsSinglePlayerMode }) {
 	const singlePlayerModeRef = useRef();
 	const multiPlayerModeRef = useRef();
 
 	const changeActiveToSinglePlayer = () => {
 		singlePlayerModeRef.current.classList.add("active");
 		multiPlayerModeRef.current.classList.remove("active");
-		setSinglePlayerMode(true);
+		setIsSinglePlayerMode(true);
 	};
 
 	const changeActiveToMultiPlayer = () => {
 		singlePlayerModeRef.current.classList.remove("active");
 		multiPlayerModeRef.current.classList.add("active");
-		setSinglePlayerMode(false);
+		setIsSinglePlayerMode(false);
 	};
 
 	return (
