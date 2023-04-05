@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./styles/style.css";
-import SinglePlayer from "./pages/SinglePlayer";
 import MenuPage from "./pages/Menu";
-import Multiplayer from "./pages/Multiplayer";
+import GamePlay from "./pages/GamePlay";
 
 function App() {
 	const [onMenuPage, setOnMenuPage] = useState(true);
-	const [singlePlayerMode, setSinglePlayerMode] = useState(true);
+	const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(true);
 
 	useEffect(() => {
-		if (onMenuPage) setSinglePlayerMode(true);
+		if (onMenuPage) setIsSinglePlayerMode(true);
 	}, [onMenuPage]);
 
 	if (onMenuPage)
 		return (
 			<MenuPage
 				setOnMenuPage={setOnMenuPage}
-				setSinglePlayerMode={setSinglePlayerMode}
+				setIsSinglePlayerMode={setIsSinglePlayerMode}
 			/>
 		);
-	if (singlePlayerMode) return <SinglePlayer setOnMenuPage={setOnMenuPage} />;
-	return <Multiplayer setOnMenuPage={setOnMenuPage} />;
+	return (
+		<GamePlay
+			setOnMenuPage={setOnMenuPage}
+			isSinglePlayerMode={isSinglePlayerMode}
+		/>
+	);
 }
 
 export default App;

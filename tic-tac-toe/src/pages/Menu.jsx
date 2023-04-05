@@ -41,7 +41,14 @@ function MenuPage({ setOnMenuPage, setSinglePlayerMode }) {
 						Multiplayer
 					</button>
 				</div>
-				<button className="start" onClick={() => setOnMenuPage(false)}>
+				<button
+					className="start"
+					onClick={() => {
+						if (!localStorage.playedBefore)
+							localStorage.playedBefore = true;
+						setOnMenuPage(false);
+					}}
+				>
 					Start
 				</button>
 			</div>
