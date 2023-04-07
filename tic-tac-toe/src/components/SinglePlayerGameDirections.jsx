@@ -2,14 +2,14 @@ import React from "react";
 
 function SinglePlayerGameDirections({ gameOver, stateOfGame, playerTurn }) {
 	if (gameOver) {
-		if (stateOfGame === "win")
+		if (stateOfGame === "player1")
 			return (
 				<div className="win-message message">
 					<h1>You won!</h1>
 					<p>Congratulations</p>
 				</div>
 			);
-		else if (stateOfGame === "lose") {
+		else if (stateOfGame === "player2") {
 			return (
 				<div className="lose-message message">
 					<h1>You lost!</h1>

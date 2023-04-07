@@ -39,6 +39,8 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
+
+
 .grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -300,4 +302,19 @@ section.menu {
 	main.menu .mode-btns {
 		min-width: calc(100vw - 2rem);
 	}
+}
+
+.dark-mode-toggle {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	border: 1.5px solid $lighter-grey;
+
+	&:hover {
+		background-color: $lighter-grey;
+	}
+}
+
+.dark-mode {
+	background-color: #000;
 }

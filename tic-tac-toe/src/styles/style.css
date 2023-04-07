@@ -247,4 +247,17 @@ section.menu .start:hover {
   main.menu .mode-btns {
     min-width: calc(100vw - 2rem);
   }
+}
+.dark-mode-toggle {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  border: 1.5px solid #f1f1f1;
+}
+.dark-mode-toggle:hover {
+  background-color: #f1f1f1;
+}
+
+.dark-mode {
+  background-color: #000;
 }/*# sourceMappingURL=style.css.map */

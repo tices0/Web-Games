@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles/style.css";
 import MenuPage from "./pages/Menu";
 import GamePlay from "./pages/GamePlay";
+import DarkModeToggle from "./components/DarkModeButton";
 
 function App() {
 	const [onMenuPage, setOnMenuPage] = useState(true);
@@ -11,18 +12,29 @@ function App() {
 		if (onMenuPage) setIsSinglePlayerMode(true);
 	}, [onMenuPage]);
 
+	let insideSection;
+
 	if (onMenuPage)
-		return (
+		insideSection = (
 			<MenuPage
 				setOnMenuPage={setOnMenuPage}
 				setIsSinglePlayerMode={setIsSinglePlayerMode}
 			/>
 		);
+	else
+		insideSection = (
+			<GamePlay
+				setOnMenuPage={setOnMenuPage}
+				isSinglePlayerMode={isSinglePlayerMode}
+			/>
+		);
+
+	const pageRef = useRef();
 	return (
-		<GamePlay
-			setOnMenuPage={setOnMenuPage}
-			isSinglePlayerMode={isSinglePlayerMode}
-		/>
+		<div className="container" ref={pageRef}>
+			<DarkModeToggle pageRef={pageRef} />
+			{insideSection}
+		</div>
 	);
 }
 
