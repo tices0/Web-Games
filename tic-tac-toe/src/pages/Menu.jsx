@@ -1,6 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import DarkModeToggle from "../components/DarkModeButton";
 
-function MenuPage({ setOnMenuPage, setIsSinglePlayerMode }) {
+function MenuPage({ setOnMenuPage, setIsSinglePlayerMode, pageRef }) {
+	const [onDarkMode, setOnDarkMode] = useState(false);
+
 	const singlePlayerModeRef = useRef();
 	const multiPlayerModeRef = useRef();
 
@@ -17,42 +20,59 @@ function MenuPage({ setOnMenuPage, setIsSinglePlayerMode }) {
 	};
 
 	return (
-		<section className="menu">
-			{/* <button className="stats">Stats</button> */}
-			<main className="middle">
-				<img src={require("../media/light-mode-logo.png")} alt="" />
-				<h1>Welcome {localStorage.playedBefore ? "back" : ""} </h1>
-				<p>Select a player mode and press Start to play</p>
-			</main>
-			<div className="btn-container">
-				<div className="mode-btns">
+		<>
+			<DarkModeToggle
+				pageRef={pageRef}
+				onDarkMode={onDarkMode}
+				setOnDarkMode={setOnDarkMode}
+			/>
+			<section className="menu">
+				<main className="middle">
+					{onDarkMode ? (
+						<img
+							src={require("../media/dark-mode-logo.png")}
+							alt=""
+						/>
+					) : (
+						<img
+							src={require("../media/light-mode-logo.png")}
+							alt=""
+						/>
+					)}
+					<h1>Welcome {localStorage.playedBefore ? "back" : ""} </h1>
+					<p>Select a player mode and press Start to play</p>
+				</main>
+				<div className="btn-container">
+					<div className="mode-btns">
+						<button
+							ref={singlePlayerModeRef}
+							className="active"
+							onClick={changeActiveToSinglePlayer}
+						>
+							Single Player
+						</button>
+						<button
+							ref={multiPlayerModeRef}
+							className=""
+							onClick={changeActiveToMultiPlayer}
+						>
+							Multiplayer
+						</button>
+					</div>
 					<button
-						ref={singlePlayerModeRef}
-						className="active"
-						onClick={changeActiveToSinglePlayer}
+						className="start"
+						onClick={() => {
+							if (!localStorage.playedBefore)
+								localStorage.playedBefore = true;
+							setOnMenuPage(false);
+							localStorage.leftMenu = true;
+						}}
 					>
-						Single Player
-					</button>
-					<button
-						ref={multiPlayerModeRef}
-						className=""
-						onClick={changeActiveToMultiPlayer}
-					>
-						Multiplayer
+						Start
 					</button>
 				</div>
-				<button
-					className="start"
-					onClick={() => {
-						if (!localStorage.playedBefore)
-							localStorage.playedBefore = true;
-						setOnMenuPage(false);
-					}}
-				>
-					Start
-				</button>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 }
 

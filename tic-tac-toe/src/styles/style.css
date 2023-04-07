@@ -74,6 +74,38 @@ body {
   color: #ff827e;
 }
 
+.dark-mode .grid .box.player-turn {
+  border-color: #575757;
+  background-color: #000;
+}
+.dark-mode .grid .box.player-turn:hover {
+  background-color: #225577;
+  border-color: #225577;
+  opacity: 0.2;
+}
+.dark-mode .grid .box.computer-turn {
+  background-color: #575757;
+  border-color: #575757;
+}
+.dark-mode .grid .box .background.red {
+  background-color: #e45651;
+}
+.dark-mode .grid .box .background.blue {
+  background-color: #225577;
+}
+.dark-mode .grid .box.x-marked {
+  border-color: #225577;
+}
+.dark-mode .grid .box.o-marked {
+  border-color: #e45651;
+}
+.dark-mode .grid .box i.fa-xmark {
+  color: #225577;
+}
+.dark-mode .grid .box i.fa-o {
+  color: #e45651;
+}
+
 section.game-directions {
   position: absolute;
   top: calc(50% - 225px);
@@ -105,6 +137,19 @@ section.game-directions .message p {
   font-size: 16px;
 }
 
+.dark-mode section.game-directions .win-message h1 {
+  color: #225577;
+}
+.dark-mode section.game-directions .lose-message h1 {
+  color: #e45651;
+}
+.dark-mode section.game-directions .draw-message h1 {
+  color: #fff;
+}
+.dark-mode section.game-directions p {
+  color: #808080;
+}
+
 .play-again {
   position: absolute;
   bottom: 2rem;
@@ -128,6 +173,20 @@ section.game-directions .message p {
 }
 .play-again:hover {
   background-color: #f1f1f1;
+}
+
+.dark-mode .play-again,
+.dark-mode .back-to-menu {
+  border-color: #212835;
+  color: #adadad;
+}
+.dark-mode .play-again i,
+.dark-mode .back-to-menu i {
+  color: #adadad;
+}
+.dark-mode .play-again:hover,
+.dark-mode .back-to-menu:hover {
+  background-color: #212835;
 }
 
 button.back-to-menu {
@@ -242,6 +301,26 @@ section.menu .start:hover {
   border-color: #ff827e;
 }
 
+.dark-mode section.menu p {
+  color: #808080;
+}
+.dark-mode section.menu button {
+  color: #fff;
+  border-color: #808080;
+}
+.dark-mode section.menu .mode-btns button:hover {
+  background-color: #212835;
+  border-color: #212835;
+}
+.dark-mode section.menu .mode-btns button.active {
+  background-color: #212835;
+  border-color: #212835;
+}
+.dark-mode section.menu .start:hover {
+  background-color: #e45651;
+  border-color: #e45651;
+}
+
 @media only screen and (max-width: 575px) {
   main.menu .start,
   main.menu .mode-btns {
@@ -253,11 +332,33 @@ section.menu .start:hover {
   top: 2rem;
   left: 2rem;
   border: 1.5px solid #f1f1f1;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 1;
 }
 .dark-mode-toggle:hover {
   background-color: #f1f1f1;
 }
+.dark-mode-toggle.on-dark-mode {
+  border-color: #808080;
+}
+.dark-mode-toggle.on-dark-mode:hover {
+  background-color: #575757;
+}
+.dark-mode-toggle .fa-sun {
+  color: #fff;
+}
+.dark-mode-toggle .fa-moon {
+  color: #000;
+}
 
 .dark-mode {
   background-color: #000;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+}
+.dark-mode * {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

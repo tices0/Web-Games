@@ -39,8 +39,6 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
-
-
 .grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -116,6 +114,51 @@ body {
 	}
 }
 
+.dark-mode .grid .box {
+	&.player-turn {
+		border-color: $darker-grey;
+		background-color: #000;
+
+		&:hover {
+			background-color: $blue;
+			border-color: $blue;
+			opacity: 0.2;
+		}
+	}
+
+	&.computer-turn {
+		background-color: $darker-grey;
+		border-color: $darker-grey;
+	}
+
+	.background {
+		&.red {
+			background-color: $dark-red;
+		}
+		&.blue {
+			background-color: $blue;
+		}
+	}
+
+	&.x-marked {
+		border-color: $blue;
+	}
+
+	&.o-marked {
+		border-color: $dark-red;
+	}
+
+	i {
+		&.fa-xmark {
+			color: $blue;
+		}
+
+		&.fa-o {
+			color: $dark-red;
+		}
+	}
+}
+
 section.game-directions {
 	position: absolute;
 	top: calc(50% - 225px);
@@ -154,6 +197,24 @@ section.game-directions {
 	}
 }
 
+.dark-mode section.game-directions {
+	.win-message h1 {
+		color: $blue;
+	}
+
+	.lose-message h1 {
+		color: $dark-red;
+	}
+
+	.draw-message h1 {
+		color: #fff;
+	}
+
+	p {
+		color: $dark-grey;
+	}
+}
+
 .play-again {
 	position: absolute;
 	bottom: 2rem;
@@ -175,6 +236,19 @@ section.game-directions {
 
 	&:hover {
 		background-color: $lighter-grey;
+	}
+}
+
+.dark-mode .play-again,
+.dark-mode .back-to-menu {
+	border-color: $dark-blue;
+	color: $grey;
+	i {
+		color: $grey;
+	}
+
+	&:hover {
+		background-color: $dark-blue;
 	}
 }
 
@@ -297,6 +371,36 @@ section.menu {
 	}
 }
 
+.dark-mode {
+	section.menu {
+		p {
+			color: $dark-grey;
+		}
+
+		button {
+			color: #fff;
+			border-color: $dark-grey;
+		}
+
+		.mode-btns button {
+			&:hover {
+				background-color: $dark-blue;
+				border-color: $dark-blue;
+			}
+
+			&.active {
+				background-color: $dark-blue;
+				border-color: $dark-blue;
+			}
+		}
+
+		.start:hover {
+			background-color: $dark-red;
+			border-color: $dark-red;
+		}
+	}
+}
+
 @media only screen and (max-width: 575px) {
 	main.menu .start,
 	main.menu .mode-btns {
@@ -309,12 +413,39 @@ section.menu {
 	top: 2rem;
 	left: 2rem;
 	border: 1.5px solid $lighter-grey;
+	padding: 0.75rem 1rem;
+	border-radius: 2px;
+	cursor: pointer;
+	z-index: 1;
 
 	&:hover {
 		background-color: $lighter-grey;
+	}
+
+	&.on-dark-mode {
+		border-color: $dark-grey;
+
+		&:hover {
+			background-color: $darker-grey;
+		}
+	}
+
+	.fa-sun {
+		color: #fff;
+	}
+
+	.fa-moon {
+		color: #000;
 	}
 }
 
 .dark-mode {
 	background-color: #000;
+	color: #fff;
+	height: 100vh;
+	width: 100vw;
+
+	* {
+		color: #fff;
+	}
 }

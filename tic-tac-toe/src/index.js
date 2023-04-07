@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 localStorage.playerBefore = false
+localStorage.leftMenu = false
 
 const possibleCombinations = [
 	[0, 1, 2],
