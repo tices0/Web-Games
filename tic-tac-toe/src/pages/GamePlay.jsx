@@ -53,7 +53,6 @@ function GamePlay({ setOnMenuPage, isSinglePlayerMode }) {
 			if (isSinglePlayerMode) {
 				if (!player1Turn)
 					setTimeout(() => {
-						console.log(boxesClicked);
 						let box = Math.floor(Math.random() * 9);
 						while (boxesClicked.includes(box)) {
 							box = Math.floor(Math.random() * 9);
