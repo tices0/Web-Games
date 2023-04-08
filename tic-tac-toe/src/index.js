@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-localStorage.removeItem("playedBefore");
-// localStorage.removeItem("onDarkMode");
-// console.log("index:", localStorage.onDarkMode);
-
 const possibleCombinations = [
 	[0, 1, 2],
 	[3, 4, 5],

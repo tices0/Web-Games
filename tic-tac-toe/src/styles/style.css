@@ -9,6 +9,7 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 .grid {
@@ -84,8 +85,8 @@ body {
   opacity: 0.2;
 }
 .dark-mode .grid .box.computer-turn {
-  background-color: #575757;
-  border-color: #575757;
+  background-color: #12161f;
+  border-color: #12161f;
 }
 .dark-mode .grid .box .background.red {
   background-color: #e45651;
@@ -106,6 +107,24 @@ body {
   color: #e45651;
 }
 
+@media only screen and (max-width: 425px) {
+  .grid .box {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .grid .box {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .grid .box {
+    width: 70px;
+    height: 70px;
+  }
+}
 section.game-directions {
   position: absolute;
   top: calc(50% - 225px);
@@ -150,6 +169,21 @@ section.game-directions .message p {
   color: #808080;
 }
 
+@media only screen and (max-width: 425px) {
+  section.game-directions {
+    top: calc(50% - 195px);
+  }
+}
+@media only screen and (max-width: 370px) {
+  section.game-directions {
+    top: calc(50% - 180px);
+  }
+}
+@media only screen and (max-width: 340px) {
+  section.game-directions {
+    top: calc(50% - 165px);
+  }
+}
 .play-again {
   position: absolute;
   bottom: 2rem;
@@ -175,6 +209,21 @@ section.game-directions .message p {
   background-color: #f1f1f1;
 }
 
+@media only screen and (max-width: 425px) {
+  .play-again {
+    width: calc(282px + 2rem - 1.5px);
+  }
+}
+@media only screen and (max-width: 370px) {
+  .play-again {
+    width: calc(252px + 2rem - 1.5px);
+  }
+}
+@media only screen and (max-width: 340px) {
+  .play-again {
+    width: calc(222px + 2rem - 1.5px);
+  }
+}
 .dark-mode .play-again,
 .dark-mode .back-to-menu {
   border-color: #212835;
@@ -322,9 +371,9 @@ section.menu .start:hover {
 }
 
 @media only screen and (max-width: 575px) {
-  main.menu .start,
-  main.menu .mode-btns {
-    min-width: calc(100vw - 2rem);
+  section.menu .start,
+  section.menu .mode-btns {
+    min-width: calc(100vw - 4rem);
   }
 }
 .dark-mode-toggle {

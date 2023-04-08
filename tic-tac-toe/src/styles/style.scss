@@ -37,6 +37,7 @@ button {
 
 body {
 	font-family: "Roboto", sans-serif;
+	overflow: hidden;
 }
 
 .grid {
@@ -127,8 +128,8 @@ body {
 	}
 
 	&.computer-turn {
-		background-color: $darker-grey;
-		border-color: $darker-grey;
+		background-color: $darker-blue;
+		border-color: $darker-blue;
 	}
 
 	.background {
@@ -156,6 +157,27 @@ body {
 		&.fa-o {
 			color: $dark-red;
 		}
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.grid .box {
+		width: 90px;
+		height: 90px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.grid .box {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	.grid .box {
+		width: 70px;
+		height: 70px;
 	}
 }
 
@@ -215,6 +237,24 @@ section.game-directions {
 	}
 }
 
+@media only screen and (max-width: 425px) {
+	section.game-directions {
+		top: calc(50% - 195px);
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	section.game-directions {
+		top: calc(50% - 180px);
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	section.game-directions {
+		top: calc(50% - 165px);
+	}
+}
+
 .play-again {
 	position: absolute;
 	bottom: 2rem;
@@ -236,6 +276,24 @@ section.game-directions {
 
 	&:hover {
 		background-color: $lighter-grey;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.play-again {
+		width: calc((3 * (90px + 4px)) + 2rem - 1.5px);
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.play-again {
+		width: calc((3 * (80px + 4px)) + 2rem - 1.5px);
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	.play-again {
+		width: calc((3 * (70px + 4px)) + 2rem - 1.5px);
 	}
 }
 
@@ -402,9 +460,9 @@ section.menu {
 }
 
 @media only screen and (max-width: 575px) {
-	main.menu .start,
-	main.menu .mode-btns {
-		min-width: calc(100vw - 2rem);
+	section.menu .start,
+	section.menu .mode-btns {
+		min-width: calc(100vw - 4rem);
 	}
 }
 
